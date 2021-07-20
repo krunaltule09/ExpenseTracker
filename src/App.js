@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+
+
+import NavBar from './components/Navbar/NavBar';
+import NavLink from './components/NavLink/NavLink';
+import TransactionForm from './components/TransactionForm/TransactionForm';
+import { TransactionProvider } from './contexts/MyContext';
+import Transactions from './components//Transactions/Transactions'
+import classes from './App.module.css'
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <TransactionProvider>
+      
+      <NavBar />
+      <div className={classes.grid}>
+        <div  className={classes.item1}>
+          <TransactionForm/>
+        </div>
+        
+        <div className={classes.item2}>
+          <Transactions className={classes.item2}/> 
+        </div>
+      </div>
+    </TransactionProvider>
+
   );
 }
 

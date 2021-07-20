@@ -1,0 +1,44 @@
+.grid_container,.grid_container_header {
+    display: grid;
+    vertical-align: middle;
+    grid-template-columns: 100px 400px 100px 100px 50px;
+    justify-content:space-evenly;
+    margin:5px;
+    padding:10px 20px;
+    background-color:#c4c4c4;
+    font-weight: 500;
+  }
+
+  .grid_container_header{
+    background-color:rgba(2,15,61,0.8);
+    color: white;
+  }
+
+  .grid_container p,.grid_container_header p{
+    padding:5px 0;
+  }
+
+  .grid_container:hover{
+    transform:scale(1.01,1.01);
+    cursor:pointer;
+  }
+ 
+
+  .del_btn{
+    width:50%;
+    height:25px;
+    background-color:rgba(158, 10, 10, 0.979);
+    margin-left: 50%;
+    transform:translateX(-50%);
+    z-index: 1;
+
+    color:white;
+    border:none;
+    align-items:center;
+    text-align:center;
+
+  }
+  .del_btn:hover{
+    cursor:pointer;
+  }
+ 

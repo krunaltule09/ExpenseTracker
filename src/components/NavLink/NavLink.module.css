@@ -1,0 +1,13 @@
+.link{
+    font-size:20px;
+    color: white;
+    text-decoration:none;
+    
+    padding:10px 15px;
+    margin:0px 20px;
+}
+
+.link:hover{
+    background-color:#000;
+    transform:scale(1.1,1.1);
+}

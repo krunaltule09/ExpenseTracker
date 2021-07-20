@@ -1,0 +1,16 @@
+.navbar{
+    display:flex;
+    flex-direction: row;
+    background-color:#020f3d ;
+    
+    padding:10px 80px;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.nav_links{
+    display:flex;
+    justify-content:space-between;
+    align-items: center;
+}

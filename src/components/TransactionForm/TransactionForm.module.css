@@ -1,0 +1,70 @@
+.transaction_form{
+    border:1px solid #020f3d;
+    padding: 5px 20px;
+    margin:20px 10px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+  
+
+    
+}
+
+.form_img{
+    height:150px;
+    width:150px;
+    background-color: #020f3d;
+    border-radius: 50%;
+    margin:5px 10px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.basicStyle{
+        padding:5px 10px;
+        width:60%;
+        
+        font-size:15px;
+}
+
+.wallet{
+    height: 75px;
+}
+
+.form_control{
+    padding:10px 15px;
+    width: 100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.form_control_2{
+    padding:10px 15px;
+    width: 100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+
+.submit{
+    padding:10px 15px;
+    width:15vw;
+    background-color:rgba(16,124,46,0.6);
+    color:white;
+    font-weight: bold;
+    border:none;
+}
+.submit:hover{
+    cursor:pointer;
+}
+input[type="radio"]{
+    margin:0 5px;
+}
+
+.error{
+    color: red;
+}
