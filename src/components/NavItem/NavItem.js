@@ -1,11 +1,11 @@
 import React from 'react'
-import classes from './NavLink.module.css'
+import classes from './NavItem.module.css'
 
-const NavLink=({name})=> {
+const NavItem=({name})=> {
     // console.log(classes)
     return (
         <a href="#" className={classes.link}>{name}</a>
     )
 }
 
-export default NavLink
+export default NavItem

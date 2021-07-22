@@ -14,3 +14,20 @@
     justify-content:space-between;
     align-items: center;
 }
+
+.nav_links a{
+    text-decoration:none;
+    padding:10px 5px;
+}
+
+.nav_links a:hover{
+
+
+    transform:scale(1.1,1.1);
+
+}
+
+.active{
+    background-color:#000;
+
+}

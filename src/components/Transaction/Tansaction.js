@@ -10,9 +10,10 @@ function Tansaction({isHeader,date,desc,amount,type,id,category,pk}) {
     <h4>Amount</h4>
     <h4>Remove</h4>
 </div>
-const [transactions,setTransactions]=useContext(TransactionContext)
+const [transactions,setTransactions,getStringDate]=useContext(TransactionContext)
 const green={backgroundColor:"rgba(16,124,46,0.6)"}
 const red={backgroundColor:"rgba(175,31,31,0.55)"}
+
 
 const deleteTransaction=(pk)=>{
     

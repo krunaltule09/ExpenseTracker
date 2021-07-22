@@ -1,18 +1,23 @@
 import React from 'react'
 import NavBarBrand from '../NavBarBrand/NavBarBrand'
-import NavLink from '../NavLink/NavLink'
+import NavItem from '../NavItem/NavItem'
 import classes from './NavBar.module.css'
+import { BrowserRouter,NavLink } from 'react-router-dom'
+
 
 const NavBar=() =>{
     return (
         <div className={classes.navbar}>
             <NavBarBrand />
-            <div className={classes.nav_links}>
-                <NavLink name="Home"/>
-                <NavLink name="Products"/>
-                <NavLink name="About"/>
-                <NavLink name="Contact"/>
-            </div>
+                <div className={classes.nav_links}>
+                    <NavLink exact={true} activeClassName={classes.active} to='/'><NavItem name="Home"/>  </NavLink>
+                    <NavLink activeClassName={classes.active} to='/products'><NavItem name="Products"/> </NavLink>
+                    <NavLink activeClassName={classes.active} to='/about'><NavItem name="About"/>  </NavLink>
+                    <NavLink activeClassName={classes.active} to='/contact'><NavItem name="Contact"/>  </NavLink> 
+                </div>
+           
+
+            
         </div>
     )
 }

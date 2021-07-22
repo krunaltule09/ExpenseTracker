@@ -23,7 +23,7 @@ export const  TransactionProvider=(props)=>{
             amount:10000,
             category:"other",
             desc:"given to friend",
-            date:"12/09/2013"
+            date:"12/09/2020"
         },
         {
             id:287443,
@@ -31,7 +31,7 @@ export const  TransactionProvider=(props)=>{
             amount:50000,
             category:"other",
             desc:"salary",
-            date:"30/10/2013"
+            date:"30/10/2019"
         },
         {
             id:765354,
@@ -39,7 +39,7 @@ export const  TransactionProvider=(props)=>{
             amount:5000,
             category:"other",
             desc:"restaurant",
-            date:"30/10/2013"
+            date:"30/10/2018"
         }
     ])
 

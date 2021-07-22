@@ -20,7 +20,7 @@ const getRandomInt=(max)=> {
 const TransactionForm=()=> {
 
     const [transactions,setTransactions,getStringDate]=useContext(TransactionContext);
-    const [amount,setAmount]=useState(0);
+    const [amount,setAmount]=useState("");
     const [type,setType]=useState("debit");
     const [category,setCategory]=useState("other");
     const [desc,setDesc]=useState("");
@@ -28,9 +28,14 @@ const TransactionForm=()=> {
     const [descError,setDescError]=useState(false);
     const [dateError,setDateError]=useState(false);
     const [date,setDate]=useState(new Date());
+    const [showSubmitSuccessMessage,setShowSubmitSuccessMessage]=useState(false);
     
-    useEffect(() => {
-        if(amount===0){
+
+
+    
+    
+    useEffect(() => {        
+        if(amount==="0" || amount==="" ){
             setAmountError(true);
         }else{
             setAmountError(false);
@@ -41,20 +46,33 @@ const TransactionForm=()=> {
             setDescError(false);
         }
 
-        if(date===null || date===undefined){
+        if(date===null || date==="" || date===undefined){
             setDateError(true);
         }else{
             setDateError(false);
         }
+
+      
+
+        
+        
 
   
     },[amount,desc,date])
 
     
     
-    
+    const clearForm=()=>{
+        setTimeout(()=>{
+            setAmount("");
+            setDesc("");
+            setCategory("other");
+        },3000)
+
+    }
 
     const submitDetails=()=>{
+        console.log("submitting...")
         const newTrans={
             id:generateId(),
             type:type,
@@ -63,8 +81,21 @@ const TransactionForm=()=> {
             desc:desc,
             date:getStringDate(date)
         }
-        if(!amountError && !descError && !dateError)
+        console.log(newTrans)
+        
+        if(!amountError && !descError && !dateError){
+            setShowSubmitSuccessMessage(true);
+            clearForm();
+
+            setTimeout(()=>{
+                setShowSubmitSuccessMessage(false);
+            },3000)
             setTransactions([...transactions,newTrans])
+        }
+            
+        else{
+            console.log("error occured")
+        }
         
     }
     const basicStyle={
@@ -72,14 +103,16 @@ const TransactionForm=()=> {
         margin:"5px 0",
         width:"100%",
         fontSize:"15px",
+        outline:"none"
         
     }
 
     const error={
-        oulineColor:"red"
+       
+        borderColor:"red"
        
     }
-    console.log(amountError,descError)
+    
     
     return (
         <div >
@@ -97,7 +130,7 @@ const TransactionForm=()=> {
                 </div>
 
                 <div className={classes.form_control_2}>
-                    <DatePicker className={classes.basicStyle} placeholderText="Choose a date" closeOnScroll={true}  dateFormat='dd/MM/yyyy' showYearDropdown scrollableYearDropdown selected={date} onChange={date=>{
+                    <DatePicker  className={dateError?[classes.basicStyle,classes.error]:classes.basicStyle} placeholderText="Choose a date" closeOnScroll={true}  dateFormat='dd/MM/yyyy' showYearDropdown scrollableYearDropdown selected={date} onChange={date=>{
                             setDate(date);
                         }}/>
                     <div>
@@ -125,6 +158,7 @@ const TransactionForm=()=> {
                         
                     }}>
                         <option value="restaurant">restaurant</option>
+                        <option value="income">income</option>
                         <option value="travel">travel</option>
                         <option value="bill">bill</option>
                         <option value="Groceries">Groceries</option>
@@ -143,12 +177,21 @@ const TransactionForm=()=> {
 
                 {amountError || descError || dateError?
                     <div className={classes.form_control}>
+                        
                         <p className={classes.error}>Please enter medatory fields</p>
                     </div>
                     :null
                     }
+
+                {showSubmitSuccessMessage?
+                    <div className={classes.form_control}>
+                        
+                        <p className={classes.success}>Submitted Successfully</p>
+                    </div>
+                    :null
+                    }    
                 <div className={classes.form_control}>
-                    <button  className={classes.submit} type="submit" onClick={()=>{
+                    <button className={classes.submit} type="submit" onClick={()=>{
                         submitDetails();
                     }}>Submit</button>
                 </div>
