@@ -51,13 +51,6 @@ const TransactionForm=()=> {
         }else{
             setDateError(false);
         }
-
-      
-
-        
-        
-
-  
     },[amount,desc,date])
 
     

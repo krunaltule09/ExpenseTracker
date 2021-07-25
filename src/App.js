@@ -18,8 +18,6 @@ import { BrowserRouter, Route ,Switch } from 'react-router-dom';
 function App() {
   return (
     <TransactionProvider>
-      
-     
       <BrowserRouter>
       <div>
         <NavBar />
@@ -29,8 +27,6 @@ function App() {
           <Route path='/products' component={Products} />
           <Route path='/contact' component={Contact} />
           <Route component={PageNotFound} />
-          
-
         </Switch>
       </div>
        
